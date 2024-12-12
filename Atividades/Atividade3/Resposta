@@ -1,0 +1,38 @@
+C:\Users\rafaf>sqlite3 SCA_242.bd
+SQLite version 3.47.2 2024-12-07 20:39:59
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE TB_ALUNO (
+(x1...>  Matricula INTEGER,
+(x1...>  Nome TEXT,
+(x1...>  Sobrenome TEXT,
+(x1...>  Curso TEXT,
+(x1...>  PRIMARY KEY(Matricula)
+(x1...> );
+sqlite> CREATE TABLE TB_PROFESSOR (
+(x1...>  IdProfessor INTEGER,
+(x1...>  Nome TEXT,
+(x1...>  Sobrenome TEXT,
+(x1...>  Materia TEXT,
+(x1...>  Curso TEXT,
+(x1...>  PRIMARY KEY(IdProfessor)
+(x1...> );
+sqlite> CREATE TABLE TB_CURSO (
+(x1...>  IdCurso INTEGER,
+(x1...>  Curso TEXT,
+(x1...>  Matricula INTEGER,
+(x1...>  IdProfessor INTEGER,
+(x1...>  PRIMARY KEY(IdCurso)
+(x1...> );
+sqlite> CREATE TABLE TB_DISCIPLINA (
+(x1...>  IdDisciplina INTEGER,
+(x1...>  Disciplina Text,
+(x1...>  IdProfessor INTEGER,
+(x1...>  NotaAlunos INTEGER,
+(x1...>  FrequenciaAlunos INTEGER,
+(x1...>  PRIMARY KEY(IdDisciplina)
+(x1...> );
+sqlite> INSERT INTO TB_ALUNO (Matricula, Nome, Sobrenome, Curso) VALUES (2, 'Saul', 'Ramos', 'Informatica');
+sqlite> SELECT Matricula, Nome FROM TB_ALUNO;
+2|Saul
+sqlite> UPDATE TB_ALUNO SET Nome = 'isaac', Matricula = '1';
+sqlite> DELETE FROM TB_ALUNO WHERE Nome = 'Isaac';
